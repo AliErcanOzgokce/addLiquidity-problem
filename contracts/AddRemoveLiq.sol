@@ -25,11 +25,11 @@ contract AddRemoveLiq {
         uint256 _amountA,
         uint256 _amountB
     ) external {
-        safeTransferFrom(IERC20(_tokenA), msg.sender, address(this), _amountA);
-        safeTransferFrom(IERC20(_tokenB), msg.sender, address(this), _amountB);
-
         safeApprove(IERC20(_tokenA), ROUTER, _amountA);
         safeApprove(IERC20(_tokenB), ROUTER, _amountB);
+        
+        safeTransferFrom(IERC20(_tokenA), msg.sender, address(this), _amountA);
+        safeTransferFrom(IERC20(_tokenB), msg.sender, address(this), _amountB);
 
         (uint256 amountA, uint256 amountB, uint256 liquidity) = IUniswapV2Router(
             ROUTER
