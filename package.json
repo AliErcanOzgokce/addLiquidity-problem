@@ -1,0 +1,19 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "hardhat": "^2.22.17"
+  },
+  "scripts": {
+    "cs": "clear && npx hardhat run test/Test.ts --network local",
+    "fresh": "npx hardhat clean && npx hardhat compile && npm run cs"
+  },
+  "dependencies": {
+    "@uniswap/lib": "^4.0.1-alpha",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.7",
+    "hardhat-tracer": "^3.1.0"
+  }
+}
